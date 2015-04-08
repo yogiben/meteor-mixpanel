@@ -1,6 +1,6 @@
 Package.describe({
   name: 'yogiben:mixpanel',
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'Loader for MixPanel',
   git: 'https://github.com/yogiben/meteor-mixpanel',
   documentation: 'README.md'
