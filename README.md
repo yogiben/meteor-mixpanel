@@ -1,5 +1,5 @@
 # meteor-mixpanel
-Client wrapper for MixPanel with optional user tracking
+Client and Server wrapper for MixPanel with optional user tracking
 
 ## Quick Start ###
 1. `meteor add yogiben:mixpanel`
@@ -28,6 +28,7 @@ MixPanel lets you track users. If you set `identifyUsers` to `true`, users will 
 ```
 
 ```
+// Client
 Tracker.autorun(function() {
     var user = Meteor.user();
     if (!user) return;
