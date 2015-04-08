@@ -15,7 +15,7 @@ Client wrapper for MixPanel with optional user tracking
 ```
 
 ## Easy Tracking of users ##
-MixPanel lets you track users. If you set `identifyUsers` to `true`, users will be identified.
+MixPanel lets you track users. If you set `identifyUsers` to `true`, users will be identified with the following code ([modified from Percolate Studio's package](https://github.com/percolatestudio/meteor-mixpanel))
 ```
 {
   "public": {
@@ -26,10 +26,6 @@ MixPanel lets you track users. If you set `identifyUsers` to `true`, users will 
   }
 }
 ```
-
-with the following code ([copied from Percolate Studio's package](https://github.com/percolatestudio/meteor-mixpanel))
-
-This is a 'one size fits all' solution. You pay want to modify this code and include it in your `Meteor.startup` functions instead of setting the `identifyUsers` property to `true`.
 
 ```
 Tracker.autorun(function() {
@@ -46,4 +42,4 @@ Tracker.autorun(function() {
     });
 });
 ```
-            
+This is a 'one size fits all' solution. You pay want to modify this code and include it in your `Meteor.startup` functions instead of setting the `identifyUsers` property to `true`.
