@@ -13,8 +13,9 @@ Package.onUse(function(api) {
 
   api.addFiles('server/mixpanel.js','server')
 
-  Npm.depends({mixpanel: '0.1.1'})
 });
+
+Npm.depends({mixpanel: '0.1.1'})
 
 Package.onTest(function(api) {
   api.use('tinytest');
