@@ -28,7 +28,6 @@ Meteor.startup(function() {
                     _.extend(person, {"$created": user.createdAt.toISOString()})
                 }
                 
-                console.log(person);
                 mixpanel.people.set(person);
             });
         }
