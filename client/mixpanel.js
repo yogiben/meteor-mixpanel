@@ -15,14 +15,21 @@ Meteor.startup(function() {
                 var user = Meteor.user();
                 if (!user) return;
                 mixpanel.identify(user._id);
-                mixpanel.people.set({
+
+                person = {
                     "Name": user.profile.firstName + ' ' + user.profile.lastName,
                     // special mixpanel property names
                     "$first_name": user.profile.firstName,
                     "$last_name": user.profile.lastName,
                     "$email": user.emails[0].address,
-                    "$created": user.createdAt.toISOString()
-                });
+                }
+
+                if (user.createdAt){
+                    _.extend(person, {"$created": user.createdAt.toISOString()})
+                }
+                
+                console.log(person);
+                mixpanel.people.set(person);
             });
         }
     }

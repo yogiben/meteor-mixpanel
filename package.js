@@ -1,6 +1,6 @@
 Package.describe({
   name: 'yogiben:mixpanel',
-  version: '0.0.4',
+  version: '0.0.5',
   summary: 'MixPanel on client and server',
   git: 'https://github.com/yogiben/meteor-mixpanel',
   documentation: 'README.md'
