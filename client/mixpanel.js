@@ -31,5 +31,11 @@ Meteor.startup(function() {
                 mixpanel.people.set(person);
             });
         }
+    } else {
+        // mixpanel.track will cause an error as it is undefined unless
+        // the mixpanel.init is called with the right key
+        mixpanel.track = function (){
+            return;
+        }
     }
 })
