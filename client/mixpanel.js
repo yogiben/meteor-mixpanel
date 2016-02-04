@@ -13,5 +13,11 @@ Meteor.startup(function() {
     mixpanel.track = function() {
       return;
     }
+    mixpanel.identify = function() {
+      return;
+    }
+    mixpane.people = function() {
+      return;
+    }
   }
 })
