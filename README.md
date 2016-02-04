@@ -13,8 +13,9 @@ Client and Server wrapper for MixPanel with optional user tracking
   }
 }
 ```
+3. `mixpanel.track('purchase, {productId: 1})`
 
-## Easy Tracking of users ##
+## Easy Tracking of users on the client ##
 MixPanel lets you track users.
 
 Add this somewhere in your code e.g. `/client/lib/`
@@ -42,3 +43,6 @@ Meteor.startup(function() {
 };
 ```
 This is a 'one size fits all' solution. You pay want to modify this code and include it in your `Meteor.startup` functions instead of setting the `identifyUsers` property to `true`.
+
+## Mixpanel on the server ##
+Biggest difference to client API is associated events with users. See the [api](https://github.com/mixpanel/mixpanel-node) for more details.
