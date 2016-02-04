@@ -1,4 +1,4 @@
-# meteor-mixpanel
+# Meteor Mixpanel
 Client and Server wrapper for MixPanel with optional user tracking
 
 ## Quick Start ###
@@ -15,32 +15,30 @@ Client and Server wrapper for MixPanel with optional user tracking
 ```
 
 ## Easy Tracking of users ##
-MixPanel lets you track users. If you set `identifyUsers` to `true`, users will be identified with the following code ([modified from Percolate Studio's package](https://github.com/percolatestudio/meteor-mixpanel))
-```
-{
-  "public": {
-    "mixpanel": {
-      "token": "18c8346c615ee36b40d3d5c267285ad0",
-      "identifyUsers": true
-    }
-  }
-}
-```
+MixPanel lets you track users.
+
+Add this somewhere in your code e.g. `/client/lib/`
 
 ```
 // Client
-Tracker.autorun(function() {
+Meteor.startup(function() {
+  Tracker.autorun(function() {
     var user = Meteor.user();
     if (!user) return;
     mixpanel.identify(user._id);
-    mixpanel.people.set({
-        "Name": user.profile.firstName + ' ' + user.profile.lastName,
-        // special mixpanel property names
-        "$first_name": user.profile.firstName,
-        "$last_name": user.profile.lastName,
-        "$email": user.emails[0].address,
-        "$created": user.createdAt.toISOString()
-    });
-});
+
+    person = {
+      "Name": user.profile.firstName + ' ' + user.profile.lastName,
+
+      // special mixpanel property names
+      "$first_name": user.profile.firstName,
+      "$last_name": user.profile.lastName,
+      "$email": user.emails[0].address,
+      "$created": user.createdAt.toISOString()
+    }
+
+    mixpanel.people.set(person);
+  });
+};
 ```
 This is a 'one size fits all' solution. You pay want to modify this code and include it in your `Meteor.startup` functions instead of setting the `identifyUsers` property to `true`.
