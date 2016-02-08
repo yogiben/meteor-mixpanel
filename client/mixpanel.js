@@ -16,8 +16,10 @@ Meteor.startup(function() {
     mixpanel.identify = function() {
       return;
     }
-    mixpanel.people = function() {
-      return;
+    mixpanel.people = {
+      set: function(){
+        return;
+      }
     }
   }
 })
