@@ -16,7 +16,7 @@ Meteor.startup(function() {
     mixpanel.identify = function() {
       return;
     }
-    mixpane.people = function() {
+    mixpanel.people = function() {
       return;
     }
   }
