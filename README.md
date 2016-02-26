@@ -20,7 +20,9 @@ MixPanel lets you track users.
 
 Add this somewhere in your code e.g. `/client/lib/`
 
-```
+```javascript
+// This is an example.
+
 // Client
 Meteor.startup(function() {
   Tracker.autorun(function() {
@@ -42,7 +44,6 @@ Meteor.startup(function() {
   });
 };
 ```
-This is a 'one size fits all' solution. You pay want to modify this code and include it in your `Meteor.startup` functions instead of setting the `identifyUsers` property to `true`.
 
 ## Mixpanel on the server ##
 Biggest difference to client API is associated events with users. See the [api](https://github.com/mixpanel/mixpanel-node) for more details.
